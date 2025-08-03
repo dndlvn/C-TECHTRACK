@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище UchetModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="История">
+          <Key>
+            <PropertyRef Name="КодИстории" />
+          </Key>
+          <Property Name="КодПользователя" Type="int" />
+          <Property Name="Дата" Type="datetime" />
+          <Property Name="Действие" Type="varchar(max)" />
+          <Property Name="КодИстории" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Оборудование">
+          <Key>
+            <PropertyRef Name="КодОборудования" />
+          </Key>
+          <Property Name="КодОборудования" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="НазваниеОборудования" Type="nvarchar" MaxLength="100" />
+          <Property Name="ТипОборудования" Type="nvarchar" MaxLength="50" />
+          <Property Name="СерийныйНомер" Type="nvarchar" MaxLength="50" />
+          <Property Name="ДатаПокупки" Type="date" />
+          <Property Name="КодСостояниеОборудования" Type="int" Nullable="false" />
+          <Property Name="КодПоставщика" Type="int" Nullable="false" />
+          <Property Name="Местоположение" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Пользователи">
+          <Key>
+            <PropertyRef Name="КодПользователя" />
+          </Key>
+          <Property Name="КодПользователя" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ИмяПользователя" Type="nvarchar" MaxLength="50" />
+          <Property Name="Пароль" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="КодРоли" Type="int" Nullable="false" />
+          <Property Name="ЭлектроннаяПочта" Type="nvarchar" MaxLength="100" />
+          <Property Name="Телефон" Type="int" />
+          <Property Name="ФамилияПользователя" Type="nvarchar" MaxLength="50" />
+          <Property Name="Логин" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ПользовательОборудование">
+          <Key>
+            <PropertyRef Name="Код" />
+          </Key>
+          <Property Name="Код" Type="int" Nullable="false" />
+          <Property Name="КодПользователь" Type="int" Nullable="false" />
+          <Property Name="КодОборудование" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Поставщики">
+          <Key>
+            <PropertyRef Name="Код" />
+          </Key>
+          <Property Name="КодПоставщика" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="НазваниеПоставщика" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="КонтактноеЛицо" Type="nvarchar" MaxLength="100" />
+          <Property Name="Телефон" Type="nvarchar" MaxLength="20" />
+          <Property Name="ЭлектроннаяПочта" Type="nvarchar" MaxLength="100" />
+          <Property Name="Адрес" Type="nvarchar" MaxLength="200" />
+          <Property Name="Код" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Роли">
+          <Key>
+            <PropertyRef Name="КодРоли" />
+          </Key>
+          <Property Name="КодРоли" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="НазваниеРоли" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="СостояниеОборудования">
+          <Key>
+            <PropertyRef Name="Код" />
+          </Key>
+          <Property Name="Код" Type="int" Nullable="false" />
+          <Property Name="Состояние" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Оборудование_Поставщики">
+          <End Role="Поставщики" Type="Self.Поставщики" Multiplicity="1" />
+          <End Role="Оборудование" Type="Self.Оборудование" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Поставщики">
+              <PropertyRef Name="Код" />
+            </Principal>
+            <Dependent Role="Оборудование">
+              <PropertyRef Name="КодПоставщика" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Оборудование_СостояниеОборудования">
+          <End Role="СостояниеОборудования" Type="Self.СостояниеОборудования" Multiplicity="1" />
+          <End Role="Оборудование" Type="Self.Оборудование" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="СостояниеОборудования">
+              <PropertyRef Name="Код" />
+            </Principal>
+            <Dependent Role="Оборудование">
+              <PropertyRef Name="КодСостояниеОборудования" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Пользователи_Роли">
+          <End Role="Роли" Type="Self.Роли" Multiplicity="1" />
+          <End Role="Пользователи" Type="Self.Пользователи" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Роли">
+              <PropertyRef Name="КодРоли" />
+            </Principal>
+            <Dependent Role="Пользователи">
+              <PropertyRef Name="КодРоли" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ПользовательОборудование_Оборудование">
+          <End Role="Оборудование" Type="Self.Оборудование" Multiplicity="1" />
+          <End Role="ПользовательОборудование" Type="Self.ПользовательОборудование" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Оборудование">
+              <PropertyRef Name="КодОборудования" />
+            </Principal>
+            <Dependent Role="ПользовательОборудование">
+              <PropertyRef Name="КодОборудование" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ПользовательОборудование_Пользователи">
+          <End Role="Пользователи" Type="Self.Пользователи" Multiplicity="1" />
+          <End Role="ПользовательОборудование" Type="Self.ПользовательОборудование" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Пользователи">
+              <PropertyRef Name="КодПользователя" />
+            </Principal>
+            <Dependent Role="ПользовательОборудование">
+              <PropertyRef Name="КодПользователь" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище UchetModelContainer">
+          <EntitySet Name="История" EntityType="Self.История" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Оборудование" EntityType="Self.Оборудование" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Пользователи" EntityType="Self.Пользователи" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ПользовательОборудование" EntityType="Self.ПользовательОборудование" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Поставщики" EntityType="Self.Поставщики" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Роли" EntityType="Self.Роли" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="СостояниеОборудования" EntityType="Self.СостояниеОборудования" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Оборудование_Поставщики" Association="Self.FK_Оборудование_Поставщики">
+            <End Role="Поставщики" EntitySet="Поставщики" />
+            <End Role="Оборудование" EntitySet="Оборудование" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Оборудование_СостояниеОборудования" Association="Self.FK_Оборудование_СостояниеОборудования">
+            <End Role="СостояниеОборудования" EntitySet="СостояниеОборудования" />
+            <End Role="Оборудование" EntitySet="Оборудование" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Пользователи_Роли" Association="Self.FK_Пользователи_Роли">
+            <End Role="Роли" EntitySet="Роли" />
+            <End Role="Пользователи" EntitySet="Пользователи" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ПользовательОборудование_Оборудование" Association="Self.FK_ПользовательОборудование_Оборудование">
+            <End Role="Оборудование" EntitySet="Оборудование" />
+            <End Role="ПользовательОборудование" EntitySet="ПользовательОборудование" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ПользовательОборудование_Пользователи" Association="Self.FK_ПользовательОборудование_Пользователи">
+            <End Role="Пользователи" EntitySet="Пользователи" />
+            <End Role="ПользовательОборудование" EntitySet="ПользовательОборудование" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UchetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Оборудование">
+          <Key>
+            <PropertyRef Name="КодОборудования" />
+          </Key>
+          <Property Name="КодОборудования" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="НазваниеОборудования" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ТипОборудования" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="СерийныйНомер" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ДатаПокупки" Type="DateTime" Precision="0" />
+          <Property Name="КодСостояниеОборудования" Type="Int32" Nullable="false" />
+          <Property Name="КодПоставщика" Type="Int32" Nullable="false" />
+          <Property Name="Местоположение" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Поставщики" Relationship="Self.FK_Оборудование_Поставщики" FromRole="Оборудование" ToRole="Поставщики" />
+          <NavigationProperty Name="СостояниеОборудования" Relationship="Self.FK_Оборудование_СостояниеОборудования" FromRole="Оборудование" ToRole="СостояниеОборудования" />
+          <NavigationProperty Name="ПользовательОборудование" Relationship="Self.FK_ПользовательОборудование_Оборудование" FromRole="Оборудование" ToRole="ПользовательОборудование" />
+        </EntityType>
+        <EntityType Name="Пользователи">
+          <Key>
+            <PropertyRef Name="КодПользователя" />
+          </Key>
+          <Property Name="КодПользователя" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ИмяПользователя" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Пароль" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="КодРоли" Type="Int32" Nullable="false" />
+          <Property Name="ЭлектроннаяПочта" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Телефон" Type="Int32" />
+          <Property Name="ФамилияПользователя" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Логин" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Роли" Relationship="Self.FK_Пользователи_Роли" FromRole="Пользователи" ToRole="Роли" />
+          <NavigationProperty Name="ПользовательОборудование" Relationship="Self.FK_ПользовательОборудование_Пользователи" FromRole="Пользователи" ToRole="ПользовательОборудование" />
+          <NavigationProperty Name="История" Relationship="UchetModel.FK_История_Пользователи" FromRole="Пользователи" ToRole="История" />
+        </EntityType>
+        <EntityType Name="ПользовательОборудование">
+          <Key>
+            <PropertyRef Name="Код" />
+          </Key>
+          <Property Name="Код" Type="Int32" Nullable="false" />
+          <Property Name="КодПользователь" Type="Int32" Nullable="false" />
+          <Property Name="КодОборудование" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Оборудование" Relationship="Self.FK_ПользовательОборудование_Оборудование" FromRole="ПользовательОборудование" ToRole="Оборудование" />
+          <NavigationProperty Name="Пользователи" Relationship="Self.FK_ПользовательОборудование_Пользователи" FromRole="ПользовательОборудование" ToRole="Пользователи" />
+        </EntityType>
+        <EntityType Name="Поставщики">
+          <Key>
+            <PropertyRef Name="Код" />
+          </Key>
+          <Property Name="КодПоставщика" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="НазваниеПоставщика" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="КонтактноеЛицо" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Телефон" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ЭлектроннаяПочта" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Адрес" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Код" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Оборудование" Relationship="Self.FK_Оборудование_Поставщики" FromRole="Поставщики" ToRole="Оборудование" />
+        </EntityType>
+        <EntityType Name="Роли">
+          <Key>
+            <PropertyRef Name="КодРоли" />
+          </Key>
+          <Property Name="КодРоли" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="НазваниеРоли" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Пользователи" Relationship="Self.FK_Пользователи_Роли" FromRole="Роли" ToRole="Пользователи" />
+        </EntityType>
+        <EntityType Name="СостояниеОборудования">
+          <Key>
+            <PropertyRef Name="Код" />
+          </Key>
+          <Property Name="Код" Type="Int32" Nullable="false" />
+          <Property Name="Состояние" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Оборудование" Relationship="Self.FK_Оборудование_СостояниеОборудования" FromRole="СостояниеОборудования" ToRole="Оборудование" />
+        </EntityType>
+        <Association Name="FK_Оборудование_Поставщики">
+          <End Role="Поставщики" Type="Self.Поставщики" Multiplicity="1" />
+          <End Role="Оборудование" Type="Self.Оборудование" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Поставщики">
+              <PropertyRef Name="Код" />
+            </Principal>
+            <Dependent Role="Оборудование">
+              <PropertyRef Name="КодПоставщика" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Оборудование_СостояниеОборудования">
+          <End Role="СостояниеОборудования" Type="Self.СостояниеОборудования" Multiplicity="1" />
+          <End Role="Оборудование" Type="Self.Оборудование" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="СостояниеОборудования">
+              <PropertyRef Name="Код" />
+            </Principal>
+            <Dependent Role="Оборудование">
+              <PropertyRef Name="КодСостояниеОборудования" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ПользовательОборудование_Оборудование">
+          <End Role="Оборудование" Type="Self.Оборудование" Multiplicity="1" />
+          <End Role="ПользовательОборудование" Type="Self.ПользовательОборудование" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Оборудование">
+              <PropertyRef Name="КодОборудования" />
+            </Principal>
+            <Dependent Role="ПользовательОборудование">
+              <PropertyRef Name="КодОборудование" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Пользователи_Роли">
+          <End Role="Роли" Type="Self.Роли" Multiplicity="1" />
+          <End Role="Пользователи" Type="Self.Пользователи" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Роли">
+              <PropertyRef Name="КодРоли" />
+            </Principal>
+            <Dependent Role="Пользователи">
+              <PropertyRef Name="КодРоли" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ПользовательОборудование_Пользователи">
+          <End Role="Пользователи" Type="Self.Пользователи" Multiplicity="1" />
+          <End Role="ПользовательОборудование" Type="Self.ПользовательОборудование" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Пользователи">
+              <PropertyRef Name="КодПользователя" />
+            </Principal>
+            <Dependent Role="ПользовательОборудование">
+              <PropertyRef Name="КодПользователь" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="UchetEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Оборудование" EntityType="Self.Оборудование" />
+          <EntitySet Name="Пользователи" EntityType="Self.Пользователи" />
+          <EntitySet Name="ПользовательОборудование" EntityType="Self.ПользовательОборудование" />
+          <EntitySet Name="Поставщики" EntityType="Self.Поставщики" />
+          <EntitySet Name="Роли" EntityType="Self.Роли" />
+          <EntitySet Name="СостояниеОборудования" EntityType="Self.СостояниеОборудования" />
+          <AssociationSet Name="FK_Оборудование_Поставщики" Association="Self.FK_Оборудование_Поставщики">
+            <End Role="Поставщики" EntitySet="Поставщики" />
+            <End Role="Оборудование" EntitySet="Оборудование" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Оборудование_СостояниеОборудования" Association="Self.FK_Оборудование_СостояниеОборудования">
+            <End Role="СостояниеОборудования" EntitySet="СостояниеОборудования" />
+            <End Role="Оборудование" EntitySet="Оборудование" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ПользовательОборудование_Оборудование" Association="Self.FK_ПользовательОборудование_Оборудование">
+            <End Role="Оборудование" EntitySet="Оборудование" />
+            <End Role="ПользовательОборудование" EntitySet="ПользовательОборудование" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Пользователи_Роли" Association="Self.FK_Пользователи_Роли">
+            <End Role="Роли" EntitySet="Роли" />
+            <End Role="Пользователи" EntitySet="Пользователи" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ПользовательОборудование_Пользователи" Association="Self.FK_ПользовательОборудование_Пользователи">
+            <End Role="Пользователи" EntitySet="Пользователи" />
+            <End Role="ПользовательОборудование" EntitySet="ПользовательОборудование" />
+          </AssociationSet>
+          <EntitySet Name="История" EntityType="UchetModel.История" />
+          <AssociationSet Name="FK_История_Пользователи" Association="UchetModel.FK_История_Пользователи">
+            <End Role="Пользователи" EntitySet="Пользователи" />
+            <End Role="История" EntitySet="История" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="История">
+          <Key>
+            <PropertyRef Name="КодИстории" />
+          </Key>
+          <Property Name="КодИстории" Type="Int32" Nullable="false" />
+          <Property Name="КодПользователя" Type="Int32" />
+          <Property Name="Дата" Type="DateTime" Precision="3" />
+          <Property Name="Действие" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Пользователи" Relationship="UchetModel.FK_История_Пользователи" FromRole="История" ToRole="Пользователи" />
+        </EntityType>
+        <Association Name="FK_История_Пользователи">
+          <End Type="UchetModel.Пользователи" Role="Пользователи" Multiplicity="0..1" />
+          <End Type="UchetModel.История" Role="История" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Пользователи">
+              <PropertyRef Name="КодПользователя" />
+            </Principal>
+            <Dependent Role="История">
+              <PropertyRef Name="КодПользователя" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище UchetModelContainer" CdmEntityContainer="UchetEntities">
+          <EntitySetMapping Name="Оборудование">
+            <EntityTypeMapping TypeName="UchetModel.Оборудование">
+              <MappingFragment StoreEntitySet="Оборудование">
+                <ScalarProperty Name="КодОборудования" ColumnName="КодОборудования" />
+                <ScalarProperty Name="НазваниеОборудования" ColumnName="НазваниеОборудования" />
+                <ScalarProperty Name="ТипОборудования" ColumnName="ТипОборудования" />
+                <ScalarProperty Name="СерийныйНомер" ColumnName="СерийныйНомер" />
+                <ScalarProperty Name="ДатаПокупки" ColumnName="ДатаПокупки" />
+                <ScalarProperty Name="КодСостояниеОборудования" ColumnName="КодСостояниеОборудования" />
+                <ScalarProperty Name="КодПоставщика" ColumnName="КодПоставщика" />
+                <ScalarProperty Name="Местоположение" ColumnName="Местоположение" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Пользователи">
+            <EntityTypeMapping TypeName="UchetModel.Пользователи">
+              <MappingFragment StoreEntitySet="Пользователи">
+                <ScalarProperty Name="КодПользователя" ColumnName="КодПользователя" />
+                <ScalarProperty Name="ИмяПользователя" ColumnName="ИмяПользователя" />
+                <ScalarProperty Name="Пароль" ColumnName="Пароль" />
+                <ScalarProperty Name="КодРоли" ColumnName="КодРоли" />
+                <ScalarProperty Name="ЭлектроннаяПочта" ColumnName="ЭлектроннаяПочта" />
+                <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+                <ScalarProperty Name="ФамилияПользователя" ColumnName="ФамилияПользователя" />
+                <ScalarProperty Name="Логин" ColumnName="Логин" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ПользовательОборудование">
+            <EntityTypeMapping TypeName="UchetModel.ПользовательОборудование">
+              <MappingFragment StoreEntitySet="ПользовательОборудование">
+                <ScalarProperty Name="Код" ColumnName="Код" />
+                <ScalarProperty Name="КодПользователь" ColumnName="КодПользователь" />
+                <ScalarProperty Name="КодОборудование" ColumnName="КодОборудование" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Поставщики">
+            <EntityTypeMapping TypeName="UchetModel.Поставщики">
+              <MappingFragment StoreEntitySet="Поставщики">
+                <ScalarProperty Name="КодПоставщика" ColumnName="КодПоставщика" />
+                <ScalarProperty Name="НазваниеПоставщика" ColumnName="НазваниеПоставщика" />
+                <ScalarProperty Name="КонтактноеЛицо" ColumnName="КонтактноеЛицо" />
+                <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+                <ScalarProperty Name="ЭлектроннаяПочта" ColumnName="ЭлектроннаяПочта" />
+                <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+                <ScalarProperty Name="Код" ColumnName="Код" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Роли">
+            <EntityTypeMapping TypeName="UchetModel.Роли">
+              <MappingFragment StoreEntitySet="Роли">
+                <ScalarProperty Name="КодРоли" ColumnName="КодРоли" />
+                <ScalarProperty Name="НазваниеРоли" ColumnName="НазваниеРоли" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="СостояниеОборудования">
+            <EntityTypeMapping TypeName="UchetModel.СостояниеОборудования">
+              <MappingFragment StoreEntitySet="СостояниеОборудования">
+                <ScalarProperty Name="Код" ColumnName="Код" />
+                <ScalarProperty Name="Состояние" ColumnName="Состояние" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="История">
+            <EntityTypeMapping TypeName="UchetModel.История">
+              <MappingFragment StoreEntitySet="История">
+                <ScalarProperty Name="Действие" ColumnName="Действие" />
+                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="КодПользователя" ColumnName="КодПользователя" />
+                <ScalarProperty Name="КодИстории" ColumnName="КодИстории" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

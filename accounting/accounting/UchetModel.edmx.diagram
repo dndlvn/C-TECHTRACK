@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d2338edb77414a8d9288cdc823ae005a" Name="Diagram1" ZoomLevel="109">
+        <EntityTypeShape EntityType="UchetModel.Оборудование" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchetModel.Пользователи" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchetModel.ПользовательОборудование" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchetModel.Поставщики" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchetModel.Роли" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchetModel.СостояниеОборудования" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="UchetModel.FK_Оборудование_Поставщики" ManuallyRouted="false" />
+        <AssociationConnector Association="UchetModel.FK_Оборудование_СостояниеОборудования" ManuallyRouted="false" />
+        <AssociationConnector Association="UchetModel.FK_ПользовательОборудование_Оборудование" ManuallyRouted="false" />
+        <AssociationConnector Association="UchetModel.FK_Пользователи_Роли" ManuallyRouted="false" />
+        <AssociationConnector Association="UchetModel.FK_ПользовательОборудование_Пользователи" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="UchetModel.История" Width="1.5" PointX="5.25" PointY="9.75" />
+        <AssociationConnector Association="UchetModel.FK_История_Пользователи" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

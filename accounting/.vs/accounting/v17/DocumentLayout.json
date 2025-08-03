@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dande\\source\\repos\\accounting\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|c:\\users\\dande\\source\\repos\\accounting\\accounting\\employepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|solutionrelative:accounting\\employepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|C:\\Users\\dande\\source\\repos\\accounting\\accounting\\uchetmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|solutionrelative:accounting\\uchetmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|C:\\Users\\dande\\source\\repos\\accounting\\accounting\\employepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|solutionrelative:accounting\\employepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|C:\\Users\\dande\\source\\repos\\accounting\\accounting\\adminpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|solutionrelative:accounting\\adminpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|C:\\Users\\dande\\source\\repos\\accounting\\accounting\\adminpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|solutionrelative:accounting\\adminpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|C:\\Users\\dande\\source\\repos\\accounting\\accounting\\log.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|solutionrelative:accounting\\log.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|C:\\Users\\dande\\source\\repos\\accounting\\accounting\\log.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|solutionrelative:accounting\\log.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|C:\\Users\\dande\\source\\repos\\accounting\\accounting\\uchetmodel.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|solutionrelative:accounting\\uchetmodel.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|C:\\Users\\dande\\source\\repos\\accounting\\accounting\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|solutionrelative:accounting\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|C:\\Users\\dande\\source\\repos\\accounting\\accounting\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|solutionrelative:accounting\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|C:\\Users\\dande\\source\\repos\\accounting\\accounting\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|solutionrelative:accounting\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|C:\\Users\\dande\\source\\repos\\accounting\\accounting\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|solutionrelative:accounting\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|C:\\Users\\dande\\source\\repos\\accounting\\accounting\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{905AE619-730F-46AD-AE4F-65F1B5B9588A}|accounting\\accounting.csproj|solutionrelative:accounting\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "log.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\log.xaml.cs",
+              "RelativeDocumentMoniker": "accounting\\log.xaml.cs",
+              "ToolTip": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\log.xaml.cs",
+              "RelativeToolTip": "accounting\\log.xaml.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAqwB8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T18:55:43.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "log.xaml",
+              "DocumentMoniker": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\log.xaml",
+              "RelativeDocumentMoniker": "accounting\\log.xaml",
+              "ToolTip": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\log.xaml",
+              "RelativeToolTip": "accounting\\log.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-27T18:45:51.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\App.config",
+              "RelativeDocumentMoniker": "accounting\\App.config",
+              "ToolTip": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\App.config",
+              "RelativeToolTip": "accounting\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-03-24T09:33:26.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "accounting\\Properties\\Resources.resx",
+              "ToolTip": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\Properties\\Resources.resx",
+              "RelativeToolTip": "accounting\\Properties\\Resources.resx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwHsAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-03-23T19:39:39.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployePage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\EmployePage.xaml.cs",
+              "RelativeDocumentMoniker": "accounting\\EmployePage.xaml.cs",
+              "ToolTip": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\EmployePage.xaml.cs",
+              "RelativeToolTip": "accounting\\EmployePage.xaml.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAmwFEAAABoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T13:56:41.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UchetModel.Context.cs",
+              "DocumentMoniker": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\UchetModel.Context.cs",
+              "RelativeDocumentMoniker": "accounting\\UchetModel.Context.cs",
+              "ToolTip": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\UchetModel.Context.cs",
+              "RelativeToolTip": "accounting\\UchetModel.Context.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T18:35:57.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\App.xaml",
+              "RelativeDocumentMoniker": "accounting\\App.xaml",
+              "ToolTip": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\App.xaml",
+              "RelativeToolTip": "accounting\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-03T17:45:05.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\AdminPage.xaml.cs",
+              "RelativeDocumentMoniker": "accounting\\AdminPage.xaml.cs",
+              "ToolTip": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\AdminPage.xaml.cs",
+              "RelativeToolTip": "accounting\\AdminPage.xaml.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAJEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T17:21:19.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployePage.xaml",
+              "DocumentMoniker": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\EmployePage.xaml",
+              "RelativeDocumentMoniker": "accounting\\EmployePage.xaml",
+              "ToolTip": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\EmployePage.xaml",
+              "RelativeToolTip": "accounting\\EmployePage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-04T13:49:39.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminPage.xaml",
+              "DocumentMoniker": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\AdminPage.xaml",
+              "RelativeDocumentMoniker": "accounting\\AdminPage.xaml",
+              "ToolTip": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\AdminPage.xaml",
+              "RelativeToolTip": "accounting\\AdminPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-28T19:13:30.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UchetModel.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\UchetModel.edmx",
+              "RelativeDocumentMoniker": "accounting\\UchetModel.edmx",
+              "ToolTip": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\UchetModel.edmx [Diagram1]",
+              "RelativeToolTip": "accounting\\UchetModel.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-02-28T13:44:42.021Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "accounting\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\MainWindow.xaml",
+              "RelativeToolTip": "accounting\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-28T13:37:12.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "accounting\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\dande\\source\\repos\\accounting\\accounting\\MainWindow.xaml.cs",
+              "RelativeToolTip": "accounting\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-28T13:37:12.063Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
